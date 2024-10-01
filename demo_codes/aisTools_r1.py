@@ -64,10 +64,10 @@ def currency_converter_v4(amount, source_curr, target_curr):
     print('-> TOOL-CURRENCY_CONVERTER CALLED')
     return f'{amount:.2f} {source_curr} is equivalent to: {conv:.2f} {target_curr}'
 ####################################################################################################################
-def currency_converter(amount, from_currency: str, to_currency: str) -> str:
+def currency_converter(amount:str, from_currency: str, to_currency: str) -> str:
     """
     Convert an amount from one currency to another using real-time exchange rates.
-    :param amount: The amount to convert.
+    :param amount: The amount to convert in the source currency.
     :param from_currency: The currency to convert from.
     :param to_currency: The currency to convert to.
     :return: A string with the converted amount or an error message.
@@ -95,7 +95,7 @@ def currency_converter(amount, from_currency: str, to_currency: str) -> str:
         rate = data['conversion_rate']
         converted = amount * rate
         
-        return f"{amount} {from_currency} is equal to {converted:.2f} {to_currency}"
+        return f"{converted:.2f}"
     
     except ValueError:
         return "Error: Invalid amount. Please provide a numeric value."

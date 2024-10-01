@@ -12,7 +12,7 @@ print(x)
 
 class GroqLLM:
     def __init__(self, api_key="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", model="llama3-70b-8192"):
-        self.api_key = api_key or os.getenv("GROQ_API_KEY")
+        self.api_key = os.getenv("GROQ_API_KEY")
         if not self.api_key:
             raise ValueError("API key must be provided either as an argument or through the 'GROQ_API_KEY' environment variable.")
         self.client = Groq(api_key=self.api_key)
