@@ -75,6 +75,7 @@ def currency_converter(amount:str, from_currency: str, to_currency: str) -> str:
     try:
         #api_key = os.environ.get('EXCHRATE_API_KEY')
         api_key = "a71dffbb1968f78f3cf3e22f"  # will expire on 11th Oct 2024
+        # after expiry we can have free offer api key which have artes updates once per day.
         
         if not api_key:
             return "Error: API key not found. Set 'EXCHRATE_API_KEY' in environment variables."
