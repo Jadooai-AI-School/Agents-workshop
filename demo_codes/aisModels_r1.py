@@ -1,14 +1,16 @@
 import os
+from dotenv import load_dotenv
+x = load_dotenv()
 from groq import Groq
 class GroqLLM:
-    def __init__(self, api_key=None, model="llama3-70b-8192"):
+    def __init__(self, api_key="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", model="llama3-70b-8192"):
         """
         Initialize the LLM with a Groq client and a model name.
         
         :param api_key: The API key for the Groq client.
         :param model: The model to use for generating responses. Default is 'llama3-70b-8192'.
         """
-        self.api_key = api_key or os.environ.get("GROQ_API_KEY")
+        self.api_key = api_key #or os.environ.get("GROQ_API_KEY")
         if not self.api_key:
             raise ValueError("API key must be provided either as an argument or through the 'GROQ_API_KEY' environment variable.")
         self.client = Groq(api_key=self.api_key)
